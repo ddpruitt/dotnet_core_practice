@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ReverseArray {
 
     public class ArrayReverser<T> {
+        
         // this modifies the orginal array.
         public IEnumerable<T> Reverse01 (IEnumerable<T> array) {
             return array.Reverse ();

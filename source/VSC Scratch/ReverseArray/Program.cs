@@ -6,19 +6,15 @@ using System.Linq;
 namespace ReverseArray {
     class Program {
         static void Main (string[] args) {
-            Console.WriteLine ("Examples of Reversing and Array");
+            //RunAllArrayReverserExamples ();
 
-            //  void _<T> (Func<IEnumerable<T>, IEnumerable<T>> reverseFunction, string name) {
-            //      var array = Enumerable.Range (1, 11);
+            //RunAllLinqQuestionExamples ();
 
-            //      System.Console.WriteLine (name);
-            //      System.Console.Write (@"{ ");
-            //      System.Console.Write (
-            //          string.Join (", ",
-            //              reverseFunction (array).Select (a => a.ToString ())
-            //          ));
-            //      System.Console.WriteLine (@" }");
-            //  }
+            RunAllStringExamples ();
+        }
+
+        private static void RunAllArrayReverserExamples () {
+            Console.WriteLine ("Examples of Reversing an Array");
 
             var arrayReverser = new ArrayReverser<int> ();
 
@@ -40,8 +36,27 @@ namespace ReverseArray {
             WriteOutResults ("Reverser07", arrayReverser.Reverse07 (Enumerable.Range (1, 11).ToArray<int> ()));
             WriteOutResults ("Reverser08", arrayReverser.Reverse08 (Enumerable.Range (1, 11).ToArray<int> ()));
 
-            WriteOutResults ("LinqQuestion01", LinqExamples.LinqQuestion01 ());
+        }
 
+        private static void RunAllLinqQuestionExamples () {
+
+            Console.WriteLine ("Linq Examples");
+
+            WriteOutResults ("LinqQuestion01", LinqExamples.LinqQuestion01 ());
+        }
+
+        private static void RunAllStringExamples () {
+            Console.WriteLine ("Examples of Reversing a String");
+
+            var stringReverser = new ReverseStrings ();
+
+            WriteOutStringExample (nameof (stringReverser.Reverse01), "This Is A Normal String", stringReverser.Reverse01);
+
+            WriteOutStringExample (nameof (stringReverser.Reverse02), "This Is A Normal String", stringReverser.Reverse02);
+        }
+        private static void WriteOutStringExample (string resultName, string toReverse, Func<string, string> reverser) {
+            System.Console.WriteLine ($"-> {resultName}\n\t- Input: {toReverse}\n\t- Output: {reverser(toReverse)}");
+            System.Console.WriteLine ();
         }
 
         private static void WriteOutResults<T> (string resultName, IEnumerable<T> results) {
