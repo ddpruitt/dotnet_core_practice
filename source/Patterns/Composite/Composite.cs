@@ -21,17 +21,9 @@ namespace Composite
         {
             System.Console.WriteLine($"{new string('-', depth)} {Name}");
 
-            var stack = new Queue<Composite>();
-
             foreach (var child in _children)
             {
-                if(child is Leaf) child.WriteAllNames(depth+1);
-                else if(child is Composite) stack.Enqueue((Composite) child);
-            }
-
-            while (stack.Count>0)
-            {
-                stack.Dequeue().WriteAllNames(depth+1);
+                child.WriteAllNames(depth + 1);
             }
         }
     }
