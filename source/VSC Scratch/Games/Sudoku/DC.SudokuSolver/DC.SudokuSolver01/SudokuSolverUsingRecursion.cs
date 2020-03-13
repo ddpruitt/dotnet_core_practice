@@ -7,29 +7,16 @@ namespace DC.SudokuSolver01
         /// <summary>
         /// An example solver to run, should get two possible solutions.
         /// </summary>
-        internal static void ExampleToSolve01()
+        internal static void ExampleToSolve01(int[,] puzzle)
         {
-            var grid = new int[,]
-            {
-                {5, 3, 0, 0, 7, 0, 0, 0, 0},
-                {6, 0, 0, 1, 9, 5, 0, 0, 0},
-                {0, 9, 8, 0, 0, 0, 0, 6, 0},
-                {8, 0, 0, 0, 6, 0, 0, 0, 3},
-                {4, 0, 0, 8, 0, 3, 0, 0, 1},
-                {7, 0, 0, 0, 2, 0, 0, 0, 6},
-                {0, 6, 0, 0, 0, 0, 2, 8, 0},
-                {0, 0, 0, 4, 1, 9, 0, 0, 5},
-                {0, 0, 0, 0, 8, 0, 0, 0, 0}
-            };
-
             var solver = new SudokuSolverUsingRecursion();
 
-            Console.Clear();
-            solver.ConsoleWriteGrid(grid, "Initial Puzzle");
+            //Console.Clear();
+            solver.ConsoleWriteGrid(puzzle, "Initial Puzzle");
 
-            solver.Solve(ref grid);
+            solver.Solve(ref puzzle);
 
-            solver.ClearConsoleToBottom();
+            //solver.ClearConsoleToBottom();
         }
 
         internal bool IsPossible(int y, int x, int n, int[,] grid)
