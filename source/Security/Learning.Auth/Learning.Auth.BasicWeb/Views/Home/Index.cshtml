@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home</h1>
+
+@Html.ActionLink("sshhhh, It's a Secret", "Secret", "Home", null, null)
+
+
+@DateTime.UtcNow
+
+<pre>
+User.Identity.Name:               @Context.User.Identity.Name
+User.Identity.AuthenticationType: @Context.User.Identity.AuthenticationType
+User.Identity.IsAuthenticated:    @Context.User.Identity.IsAuthenticated
+</pre>
