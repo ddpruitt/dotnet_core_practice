@@ -9,35 +9,35 @@ namespace POC.IoCItch.Con01
         static void Main(string[] args)
         {
 
+            Func<Type, string> nameOfInstance = instanceType =>
+            {
+                var customAttributes = instanceType
+                    .GetCustomAttributes(typeof(MathAttribute), false)
+                    .Cast<MathAttribute>();
+
+                if (customAttributes.Any()) return customAttributes.First().ActionName;
+
+                if (instanceType.Name.EndsWith("Numbers")) return instanceType.Name.Replace("Numbers", "");
+
+                return instanceType.Name;
+            };
+
+            var container = new Container(_ =>
+            {
+                // Automatically add all concrete classes of type IMathWorks to the container.
+                // If the class has a MathAttribute the use the ActionName for the class Name.
+                // If the class does not have the MathAttribute then remove the string "Numbers" from the class Name.
+                // Otherwise just use the Name.
+                _.Scan(x =>
+                {
+                    x.TheCallingAssembly();
+                    x.AddAllTypesOf<IMathWorks>()
+                        .NameBy(name => nameOfInstance(name));
+                });
+            });
+
             try
             {
-                Func<Type, string> nameOfInstance = instanceType =>
-                {
-                    var customAttributes = instanceType
-                        .GetCustomAttributes(typeof(MathAttribute), false)
-                        .Cast<MathAttribute>();
-
-                    if (customAttributes.Any()) return customAttributes.First().ActionName;
-
-                    if (instanceType.Name.EndsWith("Numbers")) return instanceType.Name.Replace("Numbers", "");
-                
-                    return instanceType.Name;
-                };
-
-                var container = new Container(_ =>
-                {
-                    // Automatically add all concrete classes of type IMathWorks to the container.
-                    // If the class has a MathAttribute the use the ActionName for the class Name.
-                    // If the class does not have the MathAttribute then remove the string "Numbers" from the class Name.
-                    // Otherwise just use the Name.
-                    _.Scan(x =>
-                    {
-                        x.TheCallingAssembly();
-                        x.AddAllTypesOf<IMathWorks>()
-                            .NameBy(name=> nameOfInstance(name));
-                    });
-                });
-
                 // Get an instance of a given IMathWorks using either the Math.ActionName or the class name (without "Numbers")
                 Console.WriteLine($"1 + 1 = {container.GetInstance<IMathWorks>("Add").Function(1, 1)}");
                 Console.WriteLine($"5 - 3 = {container.GetInstance<IMathWorks>("Subtract").Function(5, 3)}");
