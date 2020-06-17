@@ -5,14 +5,14 @@
     /// </summary>
     public abstract class Logger
     {
-        protected LogLevel logMask;
+        protected LogLevel LogMask;
 
         // The next Handler in the chain
-        protected Logger next;
+        protected Logger Next;
 
         protected Logger(LogLevel mask)
         {
-            this.logMask = mask;
+            this.LogMask = mask;
         }
 
         /// <summary>
@@ -22,23 +22,23 @@
         {
             Logger lastLogger = this;
 
-            while (lastLogger.next != null)
+            while (lastLogger.Next != null)
             {
-                lastLogger = lastLogger.next;
+                lastLogger = lastLogger.Next;
             }
 
-            lastLogger.next = nextlogger;
+            lastLogger.Next = nextlogger;
             return this;
         }
 
         public void Message(string msg, LogLevel severity)
         {
-            if ((severity & logMask) != 0) // True only if any of the logMask bits are set in severity
+            if ((severity & LogMask) != 0) // True only if any of the logMask bits are set in severity
             {
                 WriteMessage(msg);
             }
 
-            next?.Message(msg, severity);
+            Next?.Message(msg, severity);
         }
 
         protected abstract void WriteMessage(string msg);
