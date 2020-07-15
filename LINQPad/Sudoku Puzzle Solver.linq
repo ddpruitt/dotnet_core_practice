@@ -50,7 +50,7 @@ class Cell
 }
 
 
-var puzzle = new int[,]
+int[,] puzzle = new int[,]
 		   {
 				{5, 3, 0, 0, 7, 0, 0, 0, 0},
 				{6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -62,6 +62,7 @@ var puzzle = new int[,]
 				{0, 0, 0, 4, 1, 9, 0, 0, 5},
 				{0, 0, 0, 0, 8, 0, 0, 0, 0}
 			};
+			
 puzzle.Dump();
 puzzle[1,0].Dump();
 
