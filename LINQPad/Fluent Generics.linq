@@ -5,27 +5,44 @@
 
 async void Main()
 {
-	var cancelation = new CancellationTokenSource();
-	cancelation.Cancel();
-	
-	var test = new SignInEndpoint();
-	
-	var darren = await test.ExecuteAsync(new SignInRequest { Username = "darren" });
-	var notDarren = await test.ExecuteAsync(new SignInRequest { Username = "notDarren" });
-	var darrenCanceled = await test.ExecuteAsync(new SignInRequest { Username = "darren" }, cancelation.Token);
-	
-	Console.WriteLine(darren);
-	Console.WriteLine(notDarren);
-	Console.WriteLine(darrenCanceled);
-	
-	var simple = new SimpleEndpoint();
-	await simple.ExecuteAsync();
-	await simple.ExecuteAsync(cancelation.Token);
+	try
+	{	        
+		var cancelation = new CancellationTokenSource();
+		cancelation.Cancel();
+		
+		var test = new SignInEndpoint();
+		
+		var darren = await test.ExecuteAsync(new SignInRequest { Username = "darren" });
+		var notDarren = await test.ExecuteAsync(new SignInRequest { Username = "notDarren" });
+		var darrenCanceled = await test.ExecuteAsync(new SignInRequest { Username = "darren" }, cancelation.Token);
+		
+		Console.WriteLine(darren);
+		Console.WriteLine(notDarren);
+		Console.WriteLine(darrenCanceled);
+		
+	}
+	catch (Exception ex)
+	{
+		ex.Dump();
+	}
+
+	try
+	{
+		var cancelation = new CancellationTokenSource();
+		cancelation.Cancel();
+
+		var simple = new SimpleEndpoint();
+		await simple.ExecuteAsync();
+		await simple.ExecuteAsync(cancelation.Token);
+	}
+	catch (Exception ex)
+	{
+		ex.Dump();
+	}
+
 }
 
 
-
-// You can define other methods, fields, classes and namespaces here
 public static class Endpoint
 {
 	public static class WithRequest<TReq>
