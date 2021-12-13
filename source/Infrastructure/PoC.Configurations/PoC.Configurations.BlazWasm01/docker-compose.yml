@@ -1,0 +1,10 @@
+﻿version: '3.4'
+
+services:
+  blazorstandalone:
+    image: blazorstandalone
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8090:80
