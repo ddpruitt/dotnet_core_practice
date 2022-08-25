@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<heading>
+	<heading text="Crude Calculator" alt="Crude Calculator" image ="Content/images/menu-icons/calculate_24x24.png" >
+		<item name="(Ticketing) Standard Tank Calculator" id="menu-calculator-standard-tank" text="Standard Tank Calculator" alt="Crude Calculator" image="Content/images/menu-icons/tank_green_24x24.jpg" />
+		<item name="(Ticketing) Meter Calculator" id="menu-calculator-meter" text="Standard Meter Calculator" alt="Crude Calculator" image="Content/images/menu-icons/meter_24x24.png" />
+	</heading>
+
+	<heading text="Ticket Repository" alt="Ticket Repository" image="Content/images/menu-icons/ticketing.png" >
+		<!-- <item name="(Ticketing) Duplicate Tickets" id="menu-ticket-repository" text="Duplicate Tickets" alt="Duplicate Tickets" image="Content/images/menu-icons/duplicate-tickets.png" /> -->
+		<item name="(Ticketing) Frac Ticket" id="menu-frac-ticket" text="Frac Ticket" alt="Frac Ticket" image="Content/images/menu-icons/duplicate-tickets.png" />
+		<item name="(Ticketing) Ticket Entry" id="menu-ticket-entry" text="Ticket Entry" alt="Ticket Entry" image="Content/images/menu-icons/duplicate-tickets.png" />
+		<item name="(Ticketing) Manual Adjustment Queue" id="menu-manual-adjustment" text="Manual Adjustment" alt="Manual Adjustment" image="Content/images/menu-icons/duplicate-tickets.png" />
+
+		<heading text="Ticket Recalculation" alt="Ticket Recalculation" image="Content/images/menu-icons/recalculate1_24x24.png" >
+			<item name="(BarrelRecalculation) Recalculate Submit" id="menu-recalculate-submit" text="Recalculate Submit" alt="(BarrelRecalculation) Recalculate Submit" image="Content/images/menu-icons/checkList_24x24.png" />
+			<item name="(BarrelRecalculation) Recalculate Approve" id="menu-recalculate-approve" text="Recalculate Approve" alt="Recalculation Approve" image="Content/images/menu-icons/mathSum_24x24.png" />
+		</heading>
+
+		<heading text="Reconciliation" alt="Reconciliation" image="Content/images/menu-icons/leases-analysis.png" >
+			<item name="(Ticketing) Bulk - Manifest Recon" id="menu-bulk-manifest-reconciliation" text="Bulk - Manifest Recon" alt="Bulk Manifest Recon" image="Content/images/menu-icons/contract-notebook_24x24.png" />
+			<item name="(Ticketing) Bulk - Manifest Import" id="menu-bulk-manifest-reconciliation-import" text="Bulk - Manifest Recon Import" alt="Bulk Manifest Recon Import" image="Content/images/menu-icons/contract-notebook_24x24.png" />
+			<item name="(Ticketing) Delivered Volume" id="menu-delivered-volume" text="Delivered Volume" alt="Delivered Volume" image="Content/images/menu-icons/unload_24x24.png" />
+			<item name="(Ticketing) Ticket - Right Angle" id="menu-ticket-right-angle" text="Ticket - Right Angle" alt="Ticket - Right Angle" image="Content/images/menu-icons/duplicate-tickets.png" />
+		</heading>
+
+		<heading text="Ref. Files" alt="Ref. Files - Ticketing" image="Content/images/menu-icons/title-maintenance_20x20.png" >
+			<item name="(Ticketing) Transporter" id="menu-ticket-transporter" text="Transporter" alt="Transporter" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Range" id="menu-range-maintenance" text="Range" alt="Range" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Source Code" id="menu-ticket-sourcecode" text="Source Code Placeholder" alt="SC Placeholder" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) In-Transit Deliveries" id="menu-station-coins-account" text="Station-COINS Account Mapping" alt="In-Transit Deliveries" image="Content/images/menu-icons/ticketing.png" />
+			<item name="(Ticketing) Third Party Lease Xref" id="menu-third-party-lease-xref" text="Third Party Lease Xref" alt="Third Party Lease Xref" image="Content/images/menu-icons/building_24x24.png" />
+		</heading>
+
+
+		<heading text="Reports" alt="Reports - Ticketing" image="Content/images/menu-icons/title-reports_20x20.png" >
+			<item name="(Ticketing) Code Ticket Outbound Status" id="menu-code-ticket-outbound-status" text="Code Ticket Outbound Status" alt="Code Ticket Outbound Status" image="Content/images/menu-icons/maint-worksheet-crudes.png" />
+			<item name="(Ticketing) Error Active Report" id="menu-ticket-active-error-report" text="Error Active Report" alt="Reports" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Error History Report" id="menu-ticket-history-error-report" text="Error History Report" alt="Reports" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) In-Transit Deliveries" id="menu-in-transit" text="In-Transit Deliveries" alt="In-Transit Deliveries" image="Content/images/menu-icons/ticketing.png" />
+			<item name="(Ticketing) Ticket InStage" id="menu-ticket-instage" text="Ticket In Stage" alt="Ticket Instage" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Ticket Outbound Status" id="menu-ticket-outbound-status" text="Ticket Outbound Status" alt="Ticket Outbound Status" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) TicketOverride Report" id="menu-ticketoverride-report" text="TicketOverride Report" alt="TicketOverride Report" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Turndown Tickets" id="menu-turndown-tickets" text="Turndown Tickets" alt="Turndown Tickets" image="Content/images/menu-icons/duplicate-tickets.png" />
+			<item name="(Ticketing) Volume By Carrier" id="menu-report-volume-carrier" text="Volume By Carrier" alt="Volume By Carrier" image="Content/images/menu-icons/maint-worksheet-crudes.png" />
+		</heading>
+		<item name="(Ticketing) Reversal Reentry" id="menu-reversal-reentry" text="Reversal Reentry" alt="Reversal Reentry" image="Content/images/menu-icons/duplicate-tickets.png" />
+
+		<item name="(TI) Ticket Issues" id="menu-Ticket-Issues" text="Ticket Issues" alt="Ticket Issues" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+	</heading>
+	<heading text="Station Log" alt="Station Log" image="Content/images/menu-icons/building_24x24.png" >
+		<item name="(StaLog) Gain/Loss Summary" id="menu-station-log-gain-loss-summary" text="Gain/Loss Summary" alt="Gain/Loss Summary" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+		<item name="(StaLog) Station Log Reconciliation" id="menu-station-log-reconciliation" text="Station Log Reconciliation" alt="Station Log Reconciliation" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+		<item name="(StaLog) Bulk Purchase Summary" id="menu-Bulk-Purchase-Summary" text="Bulk Purchase Summary" alt="Bulk Purchase Summary" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+		<item name="(StaLog) Station Over/Short" id="menu-station-overshort" text="Station Over/Short" alt="Station Over/Short" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+		<heading text="Reports" alt="Reports - Station Log" image="Content/images/menu-icons/title-reports_20x20.png" >
+			<item name="(StaLog) Station Over/Short Management" id="menu-station-overshort-management" text="Station Over/Short Management" alt="Station Over/Short Management" image="Content/images/menu-icons/title-maintenance_20x20.png" />
+		</heading>
+	</heading>
+	<heading text="Tank Strapping" alt="Tank Strapping" image="Content/images/menu-icons/oil-barrel-24x24.png" >
+		<heading text="Lease Functions" alt="Lease Functions" image="Content/images/menu-icons/application-form-add-icon.png" >
+			<item name="(TS) Add Standard Tank" id="menu-tank-assignment" text="Add Standard Tank" alt="Add Standard Tank" image="Content/images/menu-icons/oil-barrel-24x24.png" />
+			<item name="(TS) Add Tank Strapping" id="menu-tank-strapping" text="Add Tank Strapping" alt="Strapping" image="Content/images/menu-icons/database-icon-24x24.png" />
+			<item name="(TS) Tank Increments" id="menu-tank-increment" text="Tank Increments" alt="Tank Increments" image="Content/images/menu-icons/database-increment-24x24.png" />
+			<item name="(TS) Add Meter" id="menu-meter-assignment" text="Add Meter" alt="Add Meter" image="Content/images/menu-icons/dashboard-icon.png" />
+		</heading>
+		<item name="(TS) Tank/Meter Maintenance" id="menu-tank-meter-maintenance" text="Tank/Meter Maintenance" alt="Tank/Meter Maintenance" image="Content/images/menu-icons/application-form-icon.png" />
+		<item name="(TS) Standard Tanks" id="menu-standard-tank" text="Standard Tanks" alt="Standard Tanks" image="Content/images/menu-icons/oil-barrel-24x24.png" />
+		<item name="(TS) Missing Strapping Report" id="menu-missing-strappings" text="Missing Strapping Report" alt="Missing Strapping Report" image="Content/images/menu-icons/title-reports_20x20.png" />
+	</heading>
+</heading>

@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<input type="file" onchange="parseExcelFile1(this)">
+<div id="result1"></div>
+
+<script>
+    function parseExcelFile1(inputElement) {
+        var files = inputElement.files || [];
+        if (!files.length) return;
+        var file = files[0];
+
+        console.time();
+        var reader = new FileReader();
+        reader.onloadend = function (event) {
+            var arrayBuffer = reader.result;
+            // debugger
+
+            var options = { type: 'array', sheetRows: 1000 };
+            var workbook = XLSX.read(arrayBuffer, options);
+            console.timeEnd();
+
+            var sheetName = workbook.SheetNames
+            var sheet = workbook.Sheets[sheetName]
+            result1.innerHTML = XLSX.utils.sheet_to_html(sheet);
+            //result1.innerHTML = XLSX.utils.sheet_to_json(sheet);
+        };
+        reader.readAsArrayBuffer(file);
+    }
+</script>
